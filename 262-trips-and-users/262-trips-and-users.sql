@@ -15,4 +15,3 @@ with unbanned_users AS (SELECT users_id FROM Users WHERE banned='No'),
 
 SELECT request_at as Day, ROUND(COUNT(case valid_trips.status when 'completed' then null else 1 end)  / COUNT(*),2)  AS "Cancellation Rate" FROM valid_trips GROUP BY request_at
 
-# SELECT * FROM unbanned_trips
