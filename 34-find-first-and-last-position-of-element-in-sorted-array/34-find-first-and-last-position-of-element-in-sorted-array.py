@@ -9,7 +9,6 @@ class Solution:
         
         def binary_search(left_pointer, right_pointer ):
         
-            print(left_pointer,right_pointer)
             if not nums:
                 return [-1,-1]
 
