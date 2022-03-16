@@ -8,8 +8,8 @@ class Solution:
         #sum digits in n until number // 10 == 0
         
         if n in self.trace:
-            print(self.trace)
             return False
+        
         self.trace.add(n)
         sum_of_digits_n = sum([int(char)**2 for char in str(n)])
         
