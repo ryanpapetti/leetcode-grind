@@ -24,5 +24,5 @@ class Solution:
                 stack.appendleft(val)
             left_pointer += 1
             
-        return not bool(len(stack))
+        return not stack
             
