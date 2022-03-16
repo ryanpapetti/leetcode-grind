@@ -4,21 +4,25 @@ class MovingAverage:
     def __init__(self, size: int):
         self.size = size
         self.window = deque()
+        self.total = 0 #for a more optimized approach, let's keep a running total
         
         
 
     def next(self, val: int) -> float:
-        #popleft and add to the end
         
-        #if you are not yet the size, you need to add the number to the queue and return
-        if len(self.window) < self.size:
-            self.window.append(val)
-            return sum(self.window)/len(self.window)
-        
-        self.window.popleft()
-
+        #add the val to the total
+        self.total += val
         self.window.append(val)
-        return sum(self.window)/len(self.window)
+        
+        
+        
+        if len(self.window) > self.size:
+       
+            self.total -= self.window.popleft() #update the total to reflect
+            
+
+        
+        return self.total/len(self.window)
         
         
         
