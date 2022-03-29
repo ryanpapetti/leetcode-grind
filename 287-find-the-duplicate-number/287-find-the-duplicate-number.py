@@ -1,8 +1,3 @@
-class Node:
-    def __init__(self,val,next=None):
-        self.val = val
-        self.next = next
-
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
         #okay things I got before I saw hints
