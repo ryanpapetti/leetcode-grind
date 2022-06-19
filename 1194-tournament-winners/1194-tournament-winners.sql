@@ -12,8 +12,6 @@ WITH first_player_scores AS (SELECT player_id, IFNULL(SUM(first_score),0) AS fir
 
 second_player_scores AS (SELECT player_id, IFNULL(SUM(second_score),0) AS second_scores FROM Matches RIGHT JOIN Players ON second_player=player_id  GROUP BY player_id),
 
-# the way I did this we need a FULL join ugh
-
 
 total_player_scores AS (SELECT first_player_scores.player_id, first_scores+second_scores AS total_score FROM first_player_scores INNER JOIN second_player_scores ON first_player_scores.player_id = second_player_scores.player_id  ),
 
